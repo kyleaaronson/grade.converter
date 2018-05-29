@@ -1,6 +1,5 @@
 // smoke test
 const gc = require('./converter');
-const lc = require('./converter');
 
 describe("smoke test", () => {
 	it("can blow smoke",() => {
@@ -16,13 +15,17 @@ describe("A grade average calculator", () => {
 		expect(gc.gradeAverage(60, 80, 90)).toBe(81);
 		expect(gc.gradeAverage(50, 60, 80)).toBe(68);
 	});
-});
-
-// test convert number to grade
-describe("A letter grade converter", () => {
 
 	it("can convert average grade to letter grade", () => {
-		expect(lc.convertNumberToGrade(90)).toBe(A);
-		expect(lc.convertNumberToGrade(84)).toBe(B);
+		expect(gc.convertNumberToGrade(92)).toBe("A");
+//		expect(gc.convertNumberToGrade(84)).toBe(B);
+	});
+	
+	it("can output users final grade in a sentence", () => {
+		expect(gc.getMessage(97, "A")).toBe("The student's grade average is 97. They will recieve a A in the class.");
+		expect(gc.getMessage(85, "B")).toBe("The student's grade average is 85. They will recieve a B in the class.");
+		expect(gc.getMessage(71, "C")).toBe("The student's grade average is 71. They will recieve a C in the class.");
+		expect(gc.getMessage(62, "D")).toBe("The student's grade average is 62. They will recieve a D in the class.");
+		expect(gc.getMessage(15, "F")).toBe("The student's grade average is 15. They will recieve a F in the class.")
 	});
 });

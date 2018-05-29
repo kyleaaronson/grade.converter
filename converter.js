@@ -7,7 +7,7 @@ const gradeAverage = (quiz, test, final) => {
 // converts grade average to letter grade
 const convertNumbertoGrade = (n) => {
 		if (n >= 90) {
-			return "A";
+			return "A"
 	}	if (n >= 80) {
 			return "B"
 	}	if (n >= 70) {
@@ -19,14 +19,14 @@ const convertNumbertoGrade = (n) => {
 
 // outputs a message to student with grade avaerage and letter grade earned
 const getMessage = (avg, grade) => {
-	return "the student's average is " + avg + " They will recieve a " + grade + " in the class."
+	return "The student's grade average is " + avg + ". They will recieve a " + grade + " in the class."
 }
 
-let avg = gradeAverage(98,77,84);
-let g = convertNumbertoGrade(avg);
+let avg = gradeAverage();
+let g = convertNumbertoGrade();
 console.log(getMessage(avg, g));
 
 module.exports = {
-	gradeAverage
+	gradeAverage, convertNumbertoGrade, getMessage
 };
 
