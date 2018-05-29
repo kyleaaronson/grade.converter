@@ -11,3 +11,4 @@ describe('An average grade calculator', () => {
 		expect(gc.gradeAverage(60, 80, 90)).toBe(81);
 		expect(gc.gradeAverage(50, 60, 80)).toBe(68);
 	});
+});
