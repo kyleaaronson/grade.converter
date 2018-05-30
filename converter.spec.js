@@ -19,6 +19,8 @@ describe("A grade average calculator", () => {
 	it("can convert average grade to letter grade", () => {
 		expect(gc.convertNumberToGrade(92)).toBe("A");
 		expect(gc.convertNumberToGrade(84)).toBe("B");
+		expect(gc.convertNumberToGrade(73)).toBe("C");
+		expect(gc.convertNumberToGrade(66)).toBe("D");
 	});
 	
 	it("can output users final grade in a sentence", () => {
